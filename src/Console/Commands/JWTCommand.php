@@ -42,7 +42,7 @@ class JWTCommand extends Command
         $key = $this->checkPublicKey($this->option('public') ?? null);
 
         // $decoded = JWT::decode($jwt, $key, [ClientAssertion::ALGORYTHM]);
-        $decoded = JWT::decode($token, new Key($key, 'HS256'));
+        $decoded = JWT::decode($jwt, new Key($key, ClientAssertion::ALGORYTHM));
 
         $headers = ['parameter', 'value'];
         $data = [
