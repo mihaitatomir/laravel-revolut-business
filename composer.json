@@ -1,5 +1,5 @@
 {
-    "name": "tbclla/laravel-revolut-business",
+    "name": "mihaitatomir/laravel-revolut-business",
     "description": "An unofficial Laravel wrapper for Revolut's Open API for Business",
     "license": "MIT",
     "require": {
