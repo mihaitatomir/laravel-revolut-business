@@ -30,7 +30,8 @@ class ClientAssertion
      * 
      * @var string
      */
-    const ALGORYTHM = 'RS256';
+    // const ALGORYTHM = 'RS256';
+    const ALGORYTHM = 'HS256';
 
     /**
      * The JWT client
