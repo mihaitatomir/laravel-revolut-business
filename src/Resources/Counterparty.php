@@ -50,6 +50,28 @@ class Counterparty extends Resource implements Buildable
     }
 
     /**
+     * Find a counterparty
+     *
+     * @see https://revolut-engineering.github.io/api-docs/business-api/#counterparties-get-counterparty Official API documentation
+     * @param string $id The counterpary ID in UUID format
+     * @return array The response body
+     * @throws \tbclla\Revolut\Exceptions\ApiException if the client responded with a 4xx-5xx response
+     * @throws \tbclla\Revolut\Exceptions\AppUnauthorizedException if the app needs to be re-authorized
+     */
+    public function find(array $params = [])
+    {
+        $qs = '';
+        if (!empty($params))
+        {
+            $qs = '?' . http_build_query($params);
+        }
+
+        // CURLOPT_URL => 'https://b2b.revolut.com/api/1.0/counterparties?iban=asasas&limit=1',
+
+        return $this->client->get('/counterparties' . $qs);
+    }
+    
+    /**
      * Delete a counterparty by its ID
      * 
      * @see https://revolut-engineering.github.io/api-docs/business-api/#counterparties-delete-counterparty Official API documentation
